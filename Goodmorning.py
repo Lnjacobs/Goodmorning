@@ -27,6 +27,10 @@ class ProductiveMorning:
         self.code = None
 
     def getSchedule(self):
+        '''
+        Gets the next 10 events coming up
+        '''
+        
         SCOPES = ['https://www.googleapis.com/auth/calendar.readonly']
         creds = None
         if os.path.exists('token.json'):
@@ -56,6 +60,9 @@ class ProductiveMorning:
 
 
     def setUpEmail(self,username,code):
+        '''
+        Sets up email- more info in the tutorial listed in README
+        '''
         self.username = username
         self.code = code
 
@@ -85,6 +92,9 @@ class ProductiveMorning:
 
 
     def setDeadline(self):
+        '''
+        Set up deadlines- still needs to be completed
+        '''
         assigment = input('what is the upcoming deadline?')
         deadline = input('when is it due? (NOTE: PLEASE USE YYYY-MM-DD)')
         if assignment not in self.Deadlines.keys():
@@ -94,6 +104,10 @@ class ProductiveMorning:
 
 
     def getWeather(self):
+        '''
+        Accesses weather API to find weather for given location
+        '''
+        
         # this function uses an AP to access the weather for the give city
         BASE_URL = "https://api.openweathermap.org/data/2.5/weather?"
         URL = BASE_URL + "q=" + self.city + "&appid=" + self.API_KEY
@@ -108,14 +122,18 @@ class ProductiveMorning:
         print('The tempature is ' + str(self.temperature) + ' deegrees fareinheit.')
 
     def getToDoList(self):
-        # this function presents the current to-do list for a user to view
+        '''
+        this function presents the current to-do list for a user to view
+        '''
         print('your to-do list is...')
         for x in range(1, len(self.ToDoList) + 1):
             print(str(x) + ': ' + self.ToDoList[x - 1])
 
     def addToDoList(self, toDo):
-        # this function will add one activity to the users to-do list.
-        # if the item is already in the list it will inform the user.
+        '''
+        this function will add one activity to the users to-do list.
+        if the item is already in the list it will inform the user.
+        '''
         if toDo not in self.ToDoList:
             self.ToDoList.append(toDo)
             print(toDo + ' has been successfully added to your to do list!')
@@ -123,9 +141,11 @@ class ProductiveMorning:
             print(toDo + ' is already included in todays to do list')
 
     def removeToDoList(self, done):
-        # this function removes activites from an existing to-do list
-        # if the activity is not on the to-do list, all activities are printed for the user to see
-        # the user is given the option to select any activity on the lsit or state none
+        '''
+        this function removes activites from an existing to-do list
+        if the activity is not on the to-do list, all activities are printed for the user to see
+        the user is given the option to select any activity on the lsit or state none
+        '''
         try:
             self.ToDoList.remove(done)
             print(done + ' has been removed!Good work!')
@@ -143,6 +163,9 @@ class ProductiveMorning:
                 print('Nothing has been removed from your list')
 
     def greeting(self):
+        '''
+        displays all information- to be set at start of day
+        '''
         today = datetime.date.today()
         print('First off- Good morning! Todays date is ' + str(self.today) + '.')
         self.getWeather()
