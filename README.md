@@ -13,3 +13,7 @@
 
 # The calender API will connect to the same faux email account above, with some repeating events contained. An additional credientials folder is included that is needed to access the project. 
 # Tutorial used: https://developers.google.com/calendar/api/quickstart/python
+
+# For the future- included deadlines
+
+# NOTE: No serveres are currently set up to run this program!
