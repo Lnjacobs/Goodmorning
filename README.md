@@ -5,7 +5,7 @@
 
 # The todo list has the ability to have items added or removed. Additionally it can be displayed outside of the initial morning greeting.
 
-# The weather is created using 'Open Weather', uaing a free account I created. It will not worked if called more than 100 times/minute
+# The weather is created using 'Open Weather', using a free account I created. It will not worked if called more than 100 times/minute
 # Website: https://openweathermap.org/api
 
 # Unopened emails are presented- and opened in the process. For this code to work a passcode and username must be used. For the sake of trial a proxy account has been created to recieve spam mail and the emails can be checked. 
